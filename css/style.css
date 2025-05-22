@@ -154,7 +154,25 @@ header h1 a {
     font-weight: 700;
 }
 
-/* contact-btn共通 */
+.hamburger-menu .menu-link::after {
+    position: relative;
+    left: 0;
+    bottom: -1px;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #2C2C2C;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: all 0.3s;
+}
+
+.hamburger-menu .menu-link:hover::after {
+    transform: scale(1, 1);
+}
+
+/* contact-btn共通 ---------------------- */
 .contact-btn {
     display: flex;
     align-items: center;
@@ -169,7 +187,6 @@ header h1 a {
     transition: all 0.2s;
 }
 
-/* ホバー */
 .contact-btn:hover {
     gap: 39px;
     padding: 0 14px;
@@ -221,7 +238,7 @@ header h1 a {
         display: none;
     }
 
-    /* open */
+    /* open -------------------------------------------- */
     .open .hamburger-menu {
         display: inline-block;
         position: absolute;
@@ -245,10 +262,18 @@ header h1 a {
         margin-bottom: 66px;
     }
 
+    .open .hamburger-menu .menu-link:hover::after {
+        background-color: #E9E9E9;
+        width: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .open .menu-link {
         color: #E9E9E9;
     }
 
+    /* contact-btn共通 ---------------------- */
     .open .contact-btn {
         display: flex;
         gap: 23px;
@@ -258,7 +283,17 @@ header h1 a {
         padding: 20px 24px;
         font-size: 1rem;
         line-height: 1;
+        transition: all 0.2s;
     }
+
+    .open .contact-btn:hover {
+        font-size: 1.125rem;
+        gap: 39px;
+        padding: 20px 14px;
+        background-color: #C94D00;
+        transition: all 0.3s;
+    }
+
 
     /* 店頭ご予約 */
     .open .contact-btn:nth-of-type(1) {
@@ -268,9 +303,14 @@ header h1 a {
     /* お問い合わせ */
     .open .contact-btn:nth-of-type(2) {
         background-color: #002A51;
+        transition: all 0.2s;
     }
 
-    /* ハンバーガーボタン */
+    .open .contact-btn:nth-of-type(2):hover {
+        background-color: #003D75;
+    }
+
+    /* ハンバーガーボタン -------------------------------------------- */
     .toggle_btn {
         display: block;
         width: 34px;
@@ -299,7 +339,7 @@ header h1 a {
         top: 64%;
     }
 
-    /* open */
+    /* open ---------------------- */
     .open .toggle_btn span:nth-child(1) {
         top: 50%;
         background-color: #E9E9E9;
@@ -642,7 +682,7 @@ header h1 a {
 #products h3 span {
     display: block;
     /* font-size: 0.625rem; */
-        font-size: 0.75rem;
+    font-size: 0.75rem;
     font-weight: 400;
     letter-spacing: 0;
 }
